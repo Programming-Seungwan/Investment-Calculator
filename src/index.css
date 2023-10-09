@@ -19,7 +19,6 @@ body {
   margin: 3rem auto;
 }
 
-
 .header img {
   width: 5rem;
   height: 5rem;
@@ -115,4 +114,10 @@ button:hover {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.85rem;
   color: #c2e9e0;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
