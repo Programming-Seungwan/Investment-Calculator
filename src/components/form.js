@@ -59,7 +59,7 @@ export default function Form({
         </p>
       </div>
       <p className='actions'>
-        <button type='submit' className='buttonAlt' onClick={handleFormReset}>
+        <button type='reset' className='buttonAlt' onClick={handleFormReset}>
           Reset
         </button>
         <button type='submit' className='button'>

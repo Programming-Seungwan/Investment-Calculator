@@ -19,7 +19,7 @@ export default function Table({ tableContent, currentSaving, yearlySaving }) {
           </thead>
           <tbody>
             {tableContent.map((item, index) => (
-              <tr key={index}>
+              <tr key={item.year}>
                 <td>{item.year}</td>
                 <td>${parseFloat(item.savingsEndOfYear).toFixed(2)}</td>
                 <td>${parseFloat(item.yearlyInterest).toFixed(2)}</td>
