@@ -1,6 +1,7 @@
 export default function Table({ tableContent, currentSaving, yearlySaving }) {
   const contentLength = tableContent.length;
 
+  // tableContent에는 calculateHandler 함수가 form이 제출되면 바꿔준 정보가 들어있다. duration이 0 이하이면 대체 문구가 나타난다
   return (
     <div className='table-container'>
       {contentLength === 0 ? (
@@ -27,14 +28,13 @@ export default function Table({ tableContent, currentSaving, yearlySaving }) {
                   {parseFloat(
                     item.savingsEndOfYear -
                       currentSaving -
-                      yearlySaving * index -
-                      yearlySaving
+                      yearlySaving * (index - 1)
                   ).toFixed(2)}
                 </td>
                 <td>
                   $
                   {parseFloat(
-                    currentSaving + yearlySaving * index + yearlySaving
+                    currentSaving + yearlySaving * (index + 1)
                   ).toFixed(2)}
                 </td>
               </tr>
@@ -44,14 +44,4 @@ export default function Table({ tableContent, currentSaving, yearlySaving }) {
       )}
     </div>
   );
-}
-
-{
-  /* <tr>
-  <td>YEAR NUMBER</td>
-  <td>TOTAL SAVINGS END OF YEAR</td>
-  <td>INTEREST GAINED IN YEAR</td>
-  <td>TOTAL INTEREST GAINED</td>
-  <td>TOTAL INVESTED CAPITAL</td>
-</tr>; */
 }
